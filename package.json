@@ -37,7 +37,7 @@
     "eslint-loader": "^1.6.3",
     "eslint-plugin-async-await": "0.0.0",
     "eslint-plugin-react": "^6.10.0",
-    "extract-text-webpack-plugin": "https://github.com/webpack-contrib/extract-text-webpack-plugin.git",
+    "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "^0.10.1",
     "node-sass": "^4.5.0",
     "on-build-webpack": "^0.1.0",
