@@ -1,8 +1,7 @@
 import 'es6-promise/auto';
-
 import './common.scss';
 
-
-console.log('common')
-
+// dynamic import
 import ('./async.js');
+
+console.log('common.js loaded');

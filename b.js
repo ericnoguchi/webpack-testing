@@ -1,2 +1,2 @@
 import './common';
-console.log('b');
+console.log('b.js loaded');

@@ -34,7 +34,7 @@ const webpackConfig = {
         rules: [{
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader?singleton',
+                    fallback: 'style-loader',
                     use: [{
                             // https://github.com/webpack-contrib/css-loader
                             loader: 'css-loader',
@@ -108,8 +108,6 @@ const webpackConfig = {
         // https://webpack.js.org/plugins/commons-chunk-plugin/
         new webpack.optimize.CommonsChunkPlugin({
             names: ['common', 'vendor', 'webpackBootstrap'],
-
-
         }),
         new ExtractTextPlugin({
             filename: '[name].css',

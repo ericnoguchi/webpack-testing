@@ -1,2 +1,2 @@
 import './async.scss'
-console.log('async')
+console.log('async.js loaded');
