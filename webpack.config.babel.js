@@ -45,7 +45,8 @@ const webpackConfig = {
                         {
                             loader: 'postcss-loader',
                             options: {
-                                plugins: () => [autoprefixer]
+                                plugins: () => [autoprefixer],
+                                sourceMap: isDevelopment
                             }
                         },
                         {
@@ -61,13 +62,13 @@ const webpackConfig = {
                 })
             },
             {
-                test: /\.jsx?$/,
+                test: /\.js?$/,
                 loader: "eslint-loader",
                 enforce: "pre",
                 exclude: /node_modules/,
             },
             {
-                test: /\.jsx?$/,
+                test: /\.js?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 options: {
@@ -75,10 +76,9 @@ const webpackConfig = {
                     babelrc: false,
                     presets: [
                         ["es2015", {
-                            // we want webpack to handel es6 modules and not babel
                             "modules": false
                         }],
-                        //"react",
+
                         "stage-2"
                     ],
                     "plugins": [
