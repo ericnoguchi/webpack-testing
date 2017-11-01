@@ -21,11 +21,9 @@
         "no-unreachable": "warn",
         "no-unused-vars": "warn",
         "constructor-super": "warn",
-        "valid-typeof": "warn",
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error"
+        "valid-typeof": "warn"
     },
     "plugins": [
-        "react"
+
     ]
 }

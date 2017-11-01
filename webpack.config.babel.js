@@ -15,7 +15,10 @@ const webpackConfig = {
     //https://webpack.js.org/configuration/devtool/
     devtool: isDevelopment && 'inline-source-map',
     entry: {
-        'vendor': ["es6-promise"],
+        'vendor': [
+            "style-loader/lib/addStyles",
+            "css-loader/lib/css-base",
+        ],
         'a': './a.js',
         'b': './b.js',
     },
@@ -26,7 +29,7 @@ const webpackConfig = {
     // https://webpack.js.org/configuration/output/
     output: {
         path: __dirname + '/dist',
-        publicPath: '',
+        publicPath: '/',
         filename: `[name].js`,
         chunkFilename: `./async/[id].[chunkhash:6].chunk.js`,
     },
@@ -34,7 +37,9 @@ const webpackConfig = {
         rules: [{
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
+                    fallback: {
+                        loader: 'style-loader',
+                    },
                     use: [{
                             // https://github.com/webpack-contrib/css-loader
                             loader: 'css-loader',
@@ -105,7 +110,6 @@ const webpackConfig = {
         ]
     },
     plugins: [
-        // https://webpack.js.org/plugins/commons-chunk-plugin/
         new webpack.optimize.CommonsChunkPlugin({
             names: ['common', 'vendor', 'webpackBootstrap'],
         }),

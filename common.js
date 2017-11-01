@@ -1,7 +1,9 @@
-import 'es6-promise/auto';
 import './common.scss';
 
 // dynamic import
-import ('./async.js');
+setTimeout(() => {
+    import ('./async.js');
+}, 500)
+
 
 console.log('common.js loaded');
